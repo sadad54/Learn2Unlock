@@ -1,0 +1,30 @@
+{
+  "name": "learn2unlock",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.9.0",
+  "scripts": {
+    "api": "pnpm --filter @learn2unlock/api-server dev",
+    "api:start": "pnpm --filter @learn2unlock/api-server start",
+    "start": "pnpm --filter @learn2unlock/api-server start",
+    "parent": "pnpm --parallel --filter @learn2unlock/api-server --filter @learn2unlock/parent-app dev",
+    "child": "pnpm --parallel --filter @learn2unlock/api-server --filter @learn2unlock/child-app dev",
+    "dev:parent": "pnpm --parallel --filter @learn2unlock/api-server --filter @learn2unlock/parent-app dev",
+    "dev:child": "pnpm --parallel --filter @learn2unlock/api-server --filter @learn2unlock/child-app dev",
+    "parent:web": "pnpm --parallel --filter @learn2unlock/api-server --filter @learn2unlock/parent-app dev:web",
+    "child:web": "pnpm --parallel --filter @learn2unlock/api-server --filter @learn2unlock/child-app dev:web",
+    "parent:ui": "pnpm --filter @learn2unlock/parent-app start",
+    "child:ui": "pnpm --filter @learn2unlock/child-app start",
+    "parent:web:ui": "pnpm --filter @learn2unlock/parent-app web",
+    "child:web:ui": "pnpm --filter @learn2unlock/child-app web",
+    "child:web:8082": "pnpm --filter @learn2unlock/child-app exec expo start --web --port 8082",
+    "typecheck": "pnpm --recursive typecheck",
+    "test": "pnpm --recursive test",
+    "check": "pnpm typecheck && pnpm test"
+  },
+  "devDependencies": {
+    "expo-doctor": "^1.20.1",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}

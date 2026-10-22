@@ -1,0 +1,12 @@
+node_modules/
+.pnpm-store/
+.expo/
+dist/
+coverage/
+*.log
+.DS_Store
+apps/*/.env.local
+apps/*/.env
+apps/api-server/data/
+.vercel/
+apps/*/.vercel/

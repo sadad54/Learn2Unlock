@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: learn2unlock-api
+    runtime: node
+    plan: free
+    rootDir: .
+    buildCommand: corepack enable && corepack prepare pnpm@11.9.0 --activate && pnpm install --frozen-lockfile
+    startCommand: pnpm --filter @learn2unlock/api-server start
+    envVars:
+      - key: NODE_VERSION
+        value: 22.14.0
+      - key: DATABASE_PATH
+        value: ./data/learn2unlock.sqlite
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-20b
+      - key: GROQ_API_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false

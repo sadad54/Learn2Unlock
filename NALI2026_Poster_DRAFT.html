@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Learn2Unlock — NALI 2026 Poster</title>
+<style>
+  /* ============================================================
+     A0 PORTRAIT POSTER — 841mm x 1189mm
+     Print: Chrome > Print > Destination "Save as PDF",
+            Paper size A0 (or "Custom 841x1189mm"), Margins: None,
+            Background graphics: ON
+     ============================================================ */
+  @page { size: 841mm 1189mm; margin: 0; }
+
+  :root{
+    --navy:      #0D1B2D;
+    --navy-2:    #14263D;
+    --navy-3:    #1B304B;
+    --border:    #29415E;
+    --teal:      #1E9E8A;
+    --teal-br:   #48D6BD;
+    --amber:     #F5C451;
+    --coral:     #F47C6C;
+    --cream:     #FFF8E9;
+    --paper:     #FFFDF7;
+    --ink:       #183153;
+    --ink-mute:  #65758A;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  body{
+    width:841mm; height:1189mm;
+    background:var(--cream);
+    font-family:"Segoe UI", Inter, Helvetica, Arial, sans-serif;
+    color:var(--ink);
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    background:var(--navy);
+    color:#F7FBFF;
+    padding:26mm 24mm 22mm;
+    position:relative;
+    border-bottom:6mm solid var(--teal-br);
+  }
+  .logos{
+    display:flex; justify-content:space-between; align-items:center;
+    margin-bottom:14mm;
+  }
+  .logo-slot{
+    height:26mm; min-width:52mm;
+    border:1.2mm dashed rgba(247,251,255,.28);
+    border-radius:3mm;
+    display:flex; align-items:center; justify-content:center;
+    font-size:5.2mm; letter-spacing:.4mm;
+    color:rgba(247,251,255,.45); text-align:center; padding:0 5mm;
+  }
+  .event-tag{
+    font-size:7mm; font-weight:800; letter-spacing:2.6mm;
+    color:var(--teal-br); text-transform:uppercase;
+  }
+  h1{
+    font-size:28mm; line-height:1.04; font-weight:900;
+    letter-spacing:-0.5mm; margin-bottom:8mm;
+  }
+  h1 .hl{ color:var(--teal-br); }
+  .subtitle{
+    font-size:11mm; line-height:1.3; font-weight:600;
+    color:#B9CCE0; max-width:660mm; margin-bottom:12mm;
+  }
+  .authors{ font-size:8.4mm; font-weight:700; color:#F7FBFF; margin-bottom:3mm; }
+  .affil{ font-size:6.6mm; color:#9FB0C5; line-height:1.5; }
+
+  /* ---------- LAYOUT ---------- */
+  main{
+    padding:20mm 24mm 0;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:14mm;
+    align-items:start;
+  }
+  .span2{ grid-column: span 2; }
+  .span3{ grid-column: span 3; }
+
+  section{
+    background:var(--paper);
+    border:0.8mm solid #E6DBC6;
+    border-radius:5mm;
+    padding:11mm 11mm 12mm;
+    margin-bottom:14mm;
+  }
+  section.dark{ background:var(--navy-2); border-color:var(--border); color:#F7FBFF; }
+  section.dark p, section.dark li{ color:#C9D8E8; }
+  section.dark h2{ color:var(--teal-br); }
+  section.dark h2::before{ background:var(--teal-br); }
+
+  h2{
+    font-size:10.5mm; font-weight:900; color:var(--teal);
+    text-transform:uppercase; letter-spacing:.9mm;
+    margin-bottom:7mm; padding-left:7mm; position:relative;
+  }
+  h2::before{
+    content:""; position:absolute; left:0; top:0.6mm;
+    width:2.6mm; height:9mm; border-radius:1.3mm; background:var(--teal);
+  }
+
+  p{ font-size:7.2mm; line-height:1.52; color:var(--ink); margin-bottom:5mm; }
+  p:last-child{ margin-bottom:0; }
+  strong{ font-weight:800; }
+
+  ul{ list-style:none; }
+  li{
+    font-size:7.2mm; line-height:1.5; color:var(--ink);
+    padding-left:9mm; position:relative; margin-bottom:4.5mm;
+  }
+  li:last-child{ margin-bottom:0; }
+  li::before{
+    content:""; position:absolute; left:0; top:2.6mm;
+    width:3.4mm; height:3.4mm; border-radius:50%; background:var(--amber);
+  }
+  ol{ counter-reset:n; list-style:none; }
+  ol li{ counter-increment:n; padding-left:11mm; }
+  ol li::before{
+    content:counter(n); background:var(--teal); color:#fff;
+    width:7mm; height:7mm; border-radius:50%; top:1mm;
+    display:flex; align-items:center; justify-content:center;
+    font-size:4.6mm; font-weight:900;
+  }
+
+  /* ---------- PROBLEM CALLOUT ---------- */
+  .problem-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:9mm; margin-top:7mm; }
+  .fail{
+    background:#FFF1EE; border-left:2.4mm solid var(--coral);
+    border-radius:0 4mm 4mm 0; padding:8mm;
+  }
+  .fail h3{ font-size:7.6mm; font-weight:900; color:#C4483A; margin-bottom:4mm; }
+  .fail p{ font-size:6.6mm; line-height:1.45; color:#6B3A33; }
+
+  /* ---------- FLOW DIAGRAM ---------- */
+  .flow{ display:flex; align-items:stretch; gap:0; margin-top:6mm; }
+  .step{
+    flex:1; background:var(--navy-3); border-radius:4mm;
+    padding:8mm 6mm; text-align:center; position:relative;
+    border:0.7mm solid var(--border);
+  }
+  .step .num{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:11mm; height:11mm; border-radius:50%;
+    background:var(--teal-br); color:var(--navy);
+    font-size:6.2mm; font-weight:900; margin-bottom:5mm;
+  }
+  .step h4{ font-size:7mm; font-weight:900; color:#F7FBFF; margin-bottom:3.5mm; line-height:1.25; }
+  .step p{ font-size:5.9mm; line-height:1.4; color:#A8BDD4; margin:0; }
+  .arrow{
+    width:11mm; display:flex; align-items:center; justify-content:center;
+    color:var(--teal-br); font-size:11mm; font-weight:900;
+  }
+  .step.gate{ background:#3A2A12; border-color:var(--amber); }
+  .step.gate .num{ background:var(--amber); }
+  .step.gate h4{ color:var(--amber); }
+
+  /* ---------- ARCHITECTURE ---------- */
+  .arch{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:8mm; margin-top:6mm; }
+  .node{
+    border-radius:4mm; padding:8mm 7mm; border:0.9mm solid;
+  }
+  .node.parent{ background:#0D1B2D; border-color:var(--teal-br); }
+  .node.parent h4{ color:var(--teal-br); }
+  .node.parent li{ color:#C9D8E8; }
+  .node.child{ background:#EAF8F4; border-color:var(--teal); }
+  .node.child h4{ color:var(--teal); }
+  .node.api{ background:#FDF6E3; border-color:var(--amber); }
+  .node.api h4{ color:#8A6A12; }
+  .node h4{ font-size:8mm; font-weight:900; margin-bottom:2mm; }
+  .node .tech{ font-size:5.4mm; font-weight:700; letter-spacing:.5mm; color:var(--ink-mute); margin-bottom:5mm; text-transform:uppercase; }
+  .node.parent .tech{ color:#7F97B0; }
+  .node li{ font-size:6.2mm; margin-bottom:3mm; padding-left:7mm; }
+  .node li::before{ width:2.6mm; height:2.6mm; top:2.2mm; }
+
+  /* ---------- FILTER LIST ---------- */
+  .filters{ display:grid; grid-template-columns:1fr 1fr; gap:5mm 9mm; margin-top:5mm; }
+  .filter{
+    display:flex; gap:5mm; align-items:flex-start;
+    background:rgba(244,124,108,.10); border-radius:3.5mm; padding:6mm;
+  }
+  .x{ color:var(--coral); font-size:8mm; font-weight:900; line-height:1; }
+  .filter span.t{ font-size:6.4mm; line-height:1.4; color:var(--ink); }
+
+  /* ---------- METRICS ---------- */
+  .metrics{ display:grid; grid-template-columns:repeat(4,1fr); gap:9mm; }
+  .metric{ text-align:center; background:var(--navy-3); border-radius:4mm; padding:9mm 5mm; border:0.7mm solid var(--border); }
+  .metric .big{ font-size:17mm; font-weight:900; color:var(--teal-br); line-height:1; margin-bottom:3.5mm; }
+  .metric .lbl{ font-size:5.9mm; line-height:1.35; color:#A8BDD4; font-weight:600; }
+
+  /* ---------- TABLE ---------- */
+  table{ width:100%; border-collapse:collapse; margin-top:5mm; }
+  th{
+    background:var(--teal); color:#fff; font-size:6.4mm; font-weight:800;
+    text-align:left; padding:5.5mm 6mm; letter-spacing:.3mm;
+  }
+  td{ font-size:6.4mm; line-height:1.42; padding:5.5mm 6mm; border-bottom:0.5mm solid #E6DBC6; vertical-align:top; }
+  tr:last-child td{ border-bottom:none; }
+  tbody tr:nth-child(even){ background:#FAF4E6; }
+  td.k{ font-weight:800; color:var(--teal); width:34%; }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    margin-top:6mm;
+    background:var(--navy); color:#9FB0C5;
+    padding:14mm 24mm; display:flex; justify-content:space-between; align-items:center; gap:16mm;
+  }
+  .refs{ flex:1; }
+  .refs h3{ font-size:6.6mm; color:var(--teal-br); font-weight:900; letter-spacing:.8mm; text-transform:uppercase; margin-bottom:4mm; }
+  .refs p{ font-size:5.4mm; line-height:1.55; color:#8FA3BA; margin-bottom:2mm; }
+  .contact{ text-align:right; }
+  .contact .name{ font-size:7.4mm; font-weight:900; color:#F7FBFF; margin-bottom:2.5mm; }
+  .contact .det{ font-size:5.8mm; color:#9FB0C5; line-height:1.5; }
+  .qr{
+    width:38mm; height:38mm; border:1.2mm dashed rgba(247,251,255,.3);
+    border-radius:3mm; display:flex; align-items:center; justify-content:center;
+    font-size:4.6mm; color:rgba(247,251,255,.45); text-align:center; padding:3mm;
+  }
+
+  .fill{ background:#FFF3C4; border-bottom:0.6mm dashed #B08A15; padding:0 1.5mm; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logos">
+    <div class="logo-slot">UNIVERSITY<br>LOGO</div>
+    <div class="event-tag">NALI 2026</div>
+    <div class="logo-slot">NALI 2026<br>LOGO</div>
+  </div>
+
+  <h1>Learn2Unlock: Turning Screen Time Into<br><span class="hl">Curriculum-Aligned Learning Time</span></h1>
+
+  <div class="subtitle">
+    A parent-governed mobile system where children earn device access by answering
+    KSSR-aligned questions — and where generative AI drafts questions but never
+    scores, never rewards, and never reaches a child unapproved.
+  </div>
+
+  <div class="authors">Adnan Mashrur Sadad<sup>1</sup> &nbsp;·&nbsp; <span class="fill">[Supervisor Name]</span><sup>1</sup></div>
+  <div class="affil">
+    <sup>1</sup><span class="fill">[Department / Faculty]</span>, <span class="fill">[University Name]</span>, Malaysia<br>
+    adnanmashrursadad@gmail.com
+  </div>
+</header>
+
+<main>
+
+  <!-- ROW 1 -->
+  <section class="span2">
+    <h2>The Problem</h2>
+    <p>Parental control tools respond to children's device use almost entirely with <strong>restriction</strong> — timers, blocklists, bedtime cut-offs. Restriction is adversarial by design: it makes the parent an obstacle, produces daily negotiation, and teaches the child nothing. The time spent unlocking a device produces no educational value.</p>
+    <p>A small category of "answer-to-unlock" apps exists, but fails in practice for three reasons:</p>
+    <div class="problem-grid">
+      <div class="fail">
+        <h3>Content mismatch</h3>
+        <p>Generic question banks that rarely map to the national curriculum a Malaysian child is actually assessed on.</p>
+      </div>
+      <div class="fail">
+        <h3>Authoring burden</h3>
+        <p>Where parents can add questions, they must write, verify and maintain them by hand — unrealistic for working parents.</p>
+      </div>
+      <div class="fail">
+        <h3>Trust gap</h3>
+        <p>Where AI generates questions, it does so unsupervised. Parents cannot see, correct or veto what their child is shown.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Objectives</h2>
+    <ol>
+      <li>Make device access <strong>earned through curriculum practice</strong>, not granted or denied arbitrarily.</li>
+      <li>Cut parental authoring effort with generative AI while keeping every question under human control.</li>
+      <li>Enforce <strong>architecturally</strong> that AI cannot score attempts, change rules, or award time.</li>
+      <li>Ship a cross-platform prototype covering KSSR Years 1–6 in four subjects.</li>
+      <li>Define an evaluation measuring engagement and reduction in screen-time conflict.</li>
+    </ol>
+  </section>
+
+  <!-- ROW 2: NOVELTY -->
+  <section class="span3 dark">
+    <h2>Innovation &amp; Novelty — Where the AI Sits</h2>
+    <p style="font-size:8mm; margin-bottom:8mm;">The novelty is not the reward loop. It is that the model is confined to <strong style="color:var(--amber)">drafting only</strong>. Scoring, reward calculation and rule enforcement live in deterministic server code the model cannot reach.</p>
+
+    <div class="flow">
+      <div class="step">
+        <div class="num">1</div>
+        <h4>Parent specifies</h4>
+        <p>Year, subject, topic, KSSR learning-standard code, language, difficulty, type, count</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step">
+        <div class="num">2</div>
+        <h4>Model drafts</h4>
+        <p>Server-side call under a strict JSON schema — malformed output fails at parse time</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step gate">
+        <div class="num">3</div>
+        <h4>Deterministic filter</h4>
+        <p>Auto-rejects unsafe, duplicate, or internally inconsistent drafts before any human sees them</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step gate">
+        <div class="num">4</div>
+        <h4>Parent reviews</h4>
+        <p>Stored as <strong>pending_review</strong> — invisible to the child until explicitly approved</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step">
+        <div class="num">5</div>
+        <h4>Child answers</h4>
+        <p>Server scores deterministically and credits parent-defined reward minutes</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROW 3 -->
+  <section class="span2">
+    <h2>System Architecture</h2>
+    <div class="arch">
+      <div class="node parent">
+        <h4>Parent App</h4>
+        <div class="tech">Expo · React Native · TS</div>
+        <ul>
+          <li>Five-step family setup</li>
+          <li>Question bank &amp; manual authoring</li>
+          <li>AI generation &amp; review queue</li>
+          <li>Time-request approvals</li>
+          <li>Progress reports</li>
+        </ul>
+      </div>
+      <div class="node api">
+        <h4>API Server</h4>
+        <div class="tech">Node.js · SQLite · Zod</div>
+        <ul>
+          <li>Token auth with expiry</li>
+          <li>Attempt scoring (deterministic)</li>
+          <li>Reward ledger &amp; daily caps</li>
+          <li>Safety filter pipeline</li>
+          <li>Provider key never leaves server</li>
+        </ul>
+      </div>
+      <div class="node child">
+        <h4>Child App</h4>
+        <div class="tech">Expo · React Native · TS</div>
+        <ul>
+          <li>Restriction notice</li>
+          <li>Multi-question challenge</li>
+          <li>Pass/fail &amp; earned time</li>
+          <li>Request more time from parent</li>
+          <li>Always-on emergency access</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:7mm;"><strong>Separate apps, not one app with a PIN.</strong> The child's device runs the child app; the parent keeps a genuinely separate control surface with its own authentication and visual language. A shared package holds theme tokens, Zod schemas, repository contracts and the KSSR-aligned seed bank.</p>
+  </section>
+
+  <section>
+    <h2>Safety Filter</h2>
+    <p style="font-size:6.6mm;">Before a parent sees a draft, the server rejects it if:</p>
+    <div class="filters" style="grid-template-columns:1fr;">
+      <div class="filter"><span class="x">✕</span><span class="t">It contains blocked terms — personal-data solicitation or unsafe content</span></div>
+      <div class="filter"><span class="x">✕</span><span class="t">The stated correct answer is absent from the options</span></div>
+      <div class="filter"><span class="x">✕</span><span class="t">Options duplicate after normalisation</span></div>
+      <div class="filter"><span class="x">✕</span><span class="t">The explanation does not contain the correct answer</span></div>
+      <div class="filter"><span class="x">✕</span><span class="t">It duplicates a question already in the bank</span></div>
+    </div>
+    <p style="margin-top:6mm; font-size:6.6mm;">Parent review time is spent on <strong>judgement</strong>, not on catching obvious errors.</p>
+  </section>
+
+  <!-- ROW 4 -->
+  <section class="span3 dark">
+    <h2>Prototype Status — Implemented &amp; Operational</h2>
+    <div class="metrics">
+      <div class="metric">
+        <div class="big">3</div>
+        <div class="lbl">Deployable units: parent app, child app, persistent API</div>
+      </div>
+      <div class="metric">
+        <div class="big">4</div>
+        <div class="lbl">KSSR subjects seeded — Math, Science, Bahasa Melayu, English</div>
+      </div>
+      <div class="metric">
+        <div class="big">1–6</div>
+        <div class="lbl">KSSR school years supported, tagged to learning-standard codes</div>
+      </div>
+      <div class="metric">
+        <div class="big">0</div>
+        <div class="lbl">Screen-time minutes the AI can award — by architecture</div>
+      </div>
+    </div>
+    <p style="margin-top:9mm; font-size:7.4mm;">
+      End-to-end parent flow (auth, onboarding, dashboard, requests, reports, settings) and child flow
+      (restriction, challenge, result, reward, request, emergency access) are complete, over a SQLite-backed
+      API with typed contracts shared across all three units, an automated API test suite, and repository-wide
+      type checking. <strong style="color:var(--amber)">Results at this stage are technical, not behavioural</strong> —
+      no learning-gain claim is made until the pilot below is executed.
+    </p>
+  </section>
+
+  <!-- ROW 5 -->
+  <section class="span2">
+    <h2>Planned Evaluation</h2>
+    <p><strong>Design.</strong> Within-family, pre–post pilot over eight weeks with <span class="fill">[N]</span> Malaysian families with children in KSSR Years 3–6, recruited via <span class="fill">[channel]</span>. Ethics approval from <span class="fill">[Institutional REC]</span>; parental consent and child assent; attempt data de-identified before analysis.</p>
+    <table>
+      <thead><tr><th>Measure</th><th>Instrument</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Learning engagement</td><td>Attempts, questions answered, accuracy trend by KSSR learning standard — from the server attempt log</td></tr>
+        <tr><td class="k">Conflict reduction</td><td>Parent-reported frequency and intensity of screen-time disputes, pre and post</td></tr>
+        <tr><td class="k">AI content quality</td><td>Parent approval rate, edit rate and rejection reasons for AI drafts — the key test of the human-in-the-loop pipeline</td></tr>
+        <tr><td class="k">Usability</td><td>System Usability Scale — parents, plus an age-adapted child form</td></tr>
+        <tr><td class="k">Trust</td><td>Willingness to allow AI-generated content, before and after exposure to the review workflow</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Impact &amp; Potential</h2>
+    <ul>
+      <li><strong>Educational.</strong> Time already spent negotiating for devices is redirected into spaced retrieval practice on the exact standards the school assesses.</li>
+      <li><strong>Social.</strong> The parent shifts from gatekeeper to curator — shaping what a child practises in minutes of review rather than hours of tutoring.</li>
+      <li><strong>Market.</strong> Malaysian households with primary-school children, reached via schools, PIBG networks and tuition centres.</li>
+      <li><strong>Scale.</strong> A school licence lets one teacher approve a bank for many families.</li>
+      <li><strong>Transferable.</strong> Curriculum-agnostic — swapping the learning-standard taxonomy adapts it to other national curricula.</li>
+    </ul>
+  </section>
+
+  <!-- ROW 6 -->
+  <section class="span3">
+    <h2>Conclusion</h2>
+    <p style="font-size:8.4mm; line-height:1.5;">
+      Generative AI can be introduced into children's educational technology <strong>without asking families to trust an unsupervised model</strong>.
+      By confining the model to drafting, filtering its output deterministically, and requiring explicit parental approval before any question
+      reaches a child, Learn2Unlock captures the scale advantage of AI content generation while keeping authority entirely human.
+      A working prototype is complete; the planned pilot will test whether the approach delivers measurable engagement gains and reduced household conflict.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="refs">
+    <h3>Selected References</h3>
+    <p>1. Kementerian Pendidikan Malaysia. <em>Dokumen Standard Kurikulum dan Pentaksiran (DSKP), KSSR Semakan 2017.</em> Bahagian Pembangunan Kurikulum.</p>
+    <p>2. <span class="fill">[Reference — Malaysian children's screen-time prevalence]</span></p>
+    <p>3. <span class="fill">[Reference — restrictive vs. active parental mediation]</span></p>
+    <p>4. <span class="fill">[Reference — retrieval practice in primary learners]</span></p>
+    <p>5. <span class="fill">[Reference — human-in-the-loop AI for educational content]</span></p>
+  </div>
+  <div class="contact">
+    <div class="name">Adnan Mashrur Sadad</div>
+    <div class="det">
+      <span class="fill">[Department]</span><br>
+      <span class="fill">[University Name]</span>, Malaysia<br>
+      adnanmashrursadad@gmail.com
+    </div>
+  </div>
+  <div class="qr">QR CODE<br>demo video</div>
+</footer>
+
+</body>
+</html>
