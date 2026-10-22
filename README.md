@@ -94,7 +94,7 @@ with the key Adnan sent you (it starts with `gsk_`). Save the file.
 pnpm test
 ```
 
-You should see `# pass 3` and `# fail 0`.
+Every `# fail` line should say `# fail 0`.
 
 ---
 
@@ -274,6 +274,7 @@ If asked, say: *"The core loop — rules, AI drafting with parent review, server
 | Screens show errors / won't load data | Terminal 1 must be running. Check <http://localhost:4000/health> shows `"status":"ok"`. |
 | "Port 8081 / 8082 / 4000 is in use" | Something is still running from before. Close all terminals, open fresh ones and start again (or restart the laptop). |
 | A screen looks stuck | Hard refresh the tab: `Ctrl+Shift+R`. |
+| Terminal stops with `Failed` / `exit code 3221226505` | Usually the laptop's C: drive is full. Free a few GB of disk space, then start again. |
 | Something breaks live on stage | Stay calm: refresh the tab, or use **Skip to dashboard** on the parent splash. As a last resort, present from the screenshots in section 5. |
 
 **Backup plan:** before the event, take your own screenshots/screen recording of the full demo on the laptop you'll use. If the Wi-Fi or laptop fails, present from those.
