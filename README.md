@@ -304,6 +304,7 @@ docs/screenshots/    Screenshots used in this README
 | `pnpm api` | API only (port 4000, health check at `/health`) |
 | `pnpm typecheck` / `pnpm test` | Type checks / tests |
 
+- CI (`.github/workflows/ci.yml`) runs `pnpm typecheck` and `pnpm test` on every push and pull request: type checks for all four workspaces, 7 tests across the API server and shared package.
 - Config lives in `apps/api-server/.env` (copy from `.env.example`). The Groq key stays on the server and is never bundled into the apps.
 - The local database is `apps/api-server/data/learn2unlock.sqlite` (git-ignored); deleting it reseeds demo data on next start.
 - On a real phone with Expo Go, the apps automatically point at the laptop's LAN address for the API. If Windows asks, allow Node.js on private networks, and allow inbound TCP port 4000 in the firewall.
